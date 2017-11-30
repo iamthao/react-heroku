@@ -5,7 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 registerServiceWorker();
-module.hot.accept();
+//module.hot.accept();
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

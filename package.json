@@ -7,11 +7,7 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack-dev-server --port 8000 --progress"
-  },
+
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -24,5 +20,11 @@
     "style-loader": "^0.19.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.5"
-  }
+  },
+
+  //"scripts": {
+  //  "test": "echo \"Error: no test specified\" && exit 1",
+  //  "build": "webpack",
+  //  "start": "webpack-dev-server --port 8080 --progress"
+  //}
 }
