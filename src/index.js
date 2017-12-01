@@ -1,13 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-//import App from './src/App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './components/app'
+import './styles/app.scss'
 
-registerServiceWorker();
-module.hot.accept();
-
-ReactDOM.render("test", document.getElementById('root'));
-
-
-
+ReactDOM.render(<App/>, document.getElementById('root'));
+if (module.hot) {
+    module.hot.accept('./components/app', () => { render(App) })
+}

@@ -1,26 +1,36 @@
-const webpack = require('webpack');
+const path = require('path')
+const webpack = require('webpack')
+
 module.exports = {
+    devtool: 'source-map',
     entry: [
-        './src/index.js'
+        'babel-polyfill',
+        'react-hot-loader/patch',
+        './src/index'
     ],
 
     output: {
-        filename: './src/bundle.js'
+        path: path.join(__dirname, 'public'),
+        filename: 'bundle.js',
+        publicPath: '/public/'
     },
 
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin()
+    ],
+
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.js?$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015']
-                }
+                include: path.join(__dirname, 'src')
             },
             {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                test: /\.scss?$/,
+                loader: 'style-loader!css-loader!sass-loader',
+                include: path.join(__dirname, 'src', 'styles')
             },
             {
                 test: /\.png$/,
@@ -31,17 +41,5 @@ module.exports = {
                 loader: 'file-loader'
             }
         ]
-    },
-    resolve: {
-        extensions: ['*', '.js', '.jsx']
-    },
-
-    devServer: {
-        contentBase: __dirname + "/public/",
-        inline: true,
-        hot: true
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-    ]
-};
+    }
+}
