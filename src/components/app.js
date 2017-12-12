@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/app.scss'
+import AppToDo from '../components/ToDo/App'
+import Counter from '../containers/Count/AddCount'
 
 class App extends Component {
     render() {
@@ -12,9 +14,9 @@ class App extends Component {
               <p className="App-intro">
                 To get started, edit <code>src/App.js</code> and save to reload.
               </p>
-              <p className="App-intro">
-                Thao Test 123
-              </p>
+                  <AppToDo/>
+                <hr/>
+                <Counter/>
             </div>
         );
     }
