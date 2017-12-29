@@ -10,7 +10,8 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -34,8 +35,8 @@
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors",
-    "start-dev": "webpack-dev-server --port 8080 --progress",
-    "start": "node app.js",
+    "start": "webpack-dev-server --port 8080 --progress",
+    "start-dev": "node app.js",
     "dev": "webpack-dev-server --hot --history-api-fallback --open"
   }
 }
